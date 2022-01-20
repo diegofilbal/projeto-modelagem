@@ -5,4 +5,11 @@ class OddInfo:
         self.away_odd = away_odd
         self.bookmaker = bookmaker
         self.payout = payout
-    
+
+
+class OddInfoTwoWay:
+    def __init__(self, home_odd, away_odd, bookmaker, payout):
+        self.home_odd = home_odd
+        self.away_odd = away_odd
+        self.bookmaker = bookmaker
+        self.payout = payout
