@@ -19,6 +19,7 @@ pip install -r /path/to/requirements.txt
 
 ## Executar programa
 
+### Raspar evento
 O programa de raspagem de informações de um evento deve receber a url do evento, o tipo de evento (twoway ou 1x2) e se o evento já ocorreu (past) ou ainda ocorrerá (live).
 
 ```
@@ -34,6 +35,13 @@ ou
 python main.py https://www.oddsportal.com/basketball/usa/nba/denver-nuggets-los-angeles-clippers-lItEBSuI/ 1x2 live
 ```
 
+### Raspar Temporada
+
+Para raspar os dados de uma temporada execute o comando abaixo
+
+```
+python run_season.py
+```
 
 # Autoria
 
