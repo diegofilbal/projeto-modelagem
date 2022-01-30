@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 
 from probability_model import median_of_odds_twoway
+from writer import write_header, write_odds, write_score
 from scrap_odd_info import get_odds
 
 chrome_options = webdriver.chrome.options.Options()
@@ -23,6 +24,8 @@ soup_page = BeautifulSoup(soup_file, "html.parser")
 
 main_table = soup_page.find_all('td', {'class': 'name table-participant'})
 
+write_header()
+
 for event in main_table:
     try:
         url_event = URL_BASE + event.find('a')['href']
@@ -35,10 +38,12 @@ for event in main_table:
         odds_info = get_odds(table_rows, True)
         media_home, media_away = median_of_odds_twoway(odds_info)
         
-        print("Home win probability: {:.2f}%".format(media_home*100))
-        print("Away win probability: {:.2f}%".format(media_away*100))
+        write_odds(media_home*100,media_away*100)
+        #print("Home win probability: {:.2f}%".format(media_home*100))
+        #print("Away win probability: {:.2f}%".format(media_away*100))
         
         result = (soup_page.find('p', {'class': 'result'})).find('strong').text
-        print(f"Final Score: {result}")
+        write_score(result)
+        #print(f"Final Score: {result}")
     except:
-        print('ended')
+        print('An error was encountered.')
