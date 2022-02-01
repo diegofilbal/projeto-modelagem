@@ -37,11 +37,23 @@ python main.py https://www.oddsportal.com/basketball/usa/nba/denver-nuggets-los-
 
 ### Raspar Temporada
 
-Para raspar os dados de uma temporada execute o comando abaixo
+Para raspar os dados de uma temporada é necessário que o parâmetro do nome da temporada seja fornecido. Para isso, visite o a página da temporada no OddsPortal e copie da url da página o nome que representa a temporada, isto é, a parte do texto sublinhada na imagem abaixo. Acompanhado do parâmetro referente ao número de páginas presentes nos resultados da temporada.
+
+![Nome da temporada na url da página da temporada](https://drive.google.com/uc?export=view&id=1LSrFLYm6oz6LPXQmI6Nzgc-IX1VctCbq)
+
+O comando deverá ser como os apresentados abaixo. 
 
 ```
-python run_season.py
+python run_season.py nba-2018-2019 28
 ```
+
+O comando acima acessa os dados da temporada 2018/2019 da NBA.
+
+```
+python run_season.py nba-2020-2021 25
+```
+
+O comando acima acessa os dados da temporada 2020/2021 da NBA.
 
 # Autoria
 
